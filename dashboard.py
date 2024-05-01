@@ -17,10 +17,11 @@ soup = BeautifulSoup(html_content, 'html.parser')
 #Pegar os filtros para cada continente
 Tab = soup.find('div', id='top-bar')
 dados_tab = [dadosT.text.strip() for dadosT in Tab.find_all('a')]
+st.set_page_config(layout="wide")
 
 #Função para obter as informações de cada tabela
 def obterInformacoes(cont, lista):
-    for dado in cont.find_all('tr'):
+    for dado in cont.find_all('tr')[2:]:
         celulas = dado.find_all('td')
         if celulas:
             name = celulas[1].text.strip()
@@ -81,7 +82,9 @@ ocen = obterInformacoes(Oceania, dados_Oceania)
 df_oceania = pd.DataFrame(ocen)
 
 #Cria caixa de seleção de continente
-continente = st.sidebar.selectbox("Continente",dados_tab) 
+st.sidebar.image('Assets\EA Sports FC 24.png', width=200, use_column_width=True)
+continente = st.sidebar.selectbox("Continente",dados_tab)
+
 
 #Faz a verificação da Select-Box e cria a Barra de pesquisa + Botão de Procura
 def apresentarTabela(df):
@@ -90,9 +93,21 @@ def apresentarTabela(df):
     st.write(df)
     if barraPesquisa:
         pesquisa = df[df['Nome'].str.contains(barraPesquisa, case=False)]
-        st.text('Player Encontrado')  
-        st.write(pesquisa)
+        if pesquisa.empty:   
+            st.text('Player não Encontrado')  
+            st.write(pesquisa)
+        else:
+            st.text('Player Encontrado')
+            st.write(pesquisa)
 
+if continente == "Overview":
+    placements = {'Placements': ['Europe - 512', 'LatAm South - 128', 'LatAm North - 128', 'Middle East - 128', 'North America - 128', 
+                'Africa - 32', 'North Asia - 64', 'South Asia - 64','Oceania - 32'],
+                  'Skill Rating': ['Europe - 1000', 'LatAm South - 820', 'LatAm North - 700', 'Middle East - 860', 'North America - 700', 
+                'Africa - 900', 'North Asia - 810', 'South Asia - 810', 'Oceania - 710']
+                  }
+    st.dataframe(placements)
+    
 if continente == "Global":
     apresentarTabela(df_global)
 
