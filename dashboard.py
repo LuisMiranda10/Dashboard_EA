@@ -1,9 +1,7 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
 from bs4 import BeautifulSoup
 import requests
-
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQAmthtBSdwG7-ReYch2jjNsgVLqUSDG-BWEnNaS6KiikdNO50cRyP0qcoycjF8sEmciXIjEnMLqrAR/pubhtml#'
 
@@ -81,10 +79,9 @@ dados_Oceania = []
 ocen = obterInformacoes(Oceania, dados_Oceania)
 df_oceania = pd.DataFrame(ocen)
 
-#Cria caixa de seleção de continente
-st.sidebar.image('Assets\EA Sports FC 24.png', width=200, use_column_width=True)
+#Cria caixa de seleção de continente e logo
+st.sidebar.image('Assets\EA Sport FIFA 23.png', width=200, use_column_width=True)
 continente = st.sidebar.selectbox("Continente",dados_tab)
-
 
 #Faz a verificação da Select-Box e cria a Barra de pesquisa + Botão de Procura
 def apresentarTabela(df):
@@ -106,6 +103,7 @@ if continente == "Overview":
                   'Skill Rating': ['Europe - 1000', 'LatAm South - 820', 'LatAm North - 700', 'Middle East - 860', 'North America - 700', 
                 'Africa - 900', 'North Asia - 810', 'South Asia - 810', 'Oceania - 710']
                   }
+    st.title("_FGS 23 FUT Division Rivals Leaderboard_ :soccer:" )
     st.dataframe(placements)
     
 if continente == "Global":
