@@ -8,12 +8,50 @@ Este projeto é um dashboard que permite verificar a classificação dos melhore
 
 O objetivo deste aplicativo é fornecer uma interface fácil, intuitiva e visualmente mais elaborada para os usuários verificarem a classificação de cada continente e conseguirem procurar jogadores especifícos, permitindo que eles ajustem a tabela de acordo com suas necessidades.
 
+## Pré-requisitos
+
+Antes de começar a utilizar o dashboard, é necessário possuir os seguintes pré-requisitos:
+### Hardware
+
+- Computador com processador de 1 GHz ou superior
+- 2 GB de memória RAM ou superior
+- Conexão com a internet
+
+### Software
+
+ - Navegador web moderno, como Google Chrome, Mozilla Firefox, Safari ou Microsoft Edge
+ - Editor de texto para codificação, como Visual Studio Code, Sublime Text ou Atom
+
+## Funcionalidades
+- Visualização da classificação por continente.
+- Pesquisa por jogadores específicos.
+
+## Tecnologias Utilizadas
+- Python
+- Pandas
+- Streamlit
+- BeautifulSoup
+- Requests
+
 ## Instalação
 
 1. Clone o repositório em sua máquina local.
-2. Abra o terminal e navegue até o diretório do projeto.
-3. Execute o comando pip install streamlit pandas requests beautifulsoup4 para instalar as dependências do projeto.
-4. Execute o comando streamlit run nome_do_arquivo para iniciar o servidor local e visualizar o dashboard em seu navegador.
+```
+git clone https://github.com/seu-usuario/Dashboard_EA.git
+```
+3. Abra o terminal e navegue até o diretório do projeto.
+4. Para instalar as dependências do projeto, execute o seguinte comando.
+```
+pip install streamlit pandas requests beautifulsoup4
+```
+6. Execute o comando streamlit run nome_do_arquivo para iniciar o servidor local e visualizar o dashboard em seu navegador.
+```
+streamlit run .\dashboard.py
+```
+
+## Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request com melhorias ou correções.
 
 ## Licença
 
