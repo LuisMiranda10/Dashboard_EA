@@ -1,4 +1,4 @@
-![EAEsports](Assets\EA Sport FIFA 23.png)
+![EA_Esports](Assets\EASportFIFA23.png)
 
 # Dashboard_EA
 
