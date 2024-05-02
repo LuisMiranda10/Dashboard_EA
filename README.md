@@ -40,11 +40,11 @@ Antes de começar a utilizar o dashboard, é necessário possuir os seguintes pr
 git clone https://github.com/seu-usuario/Dashboard_EA.git
 ```
 3. Abra o terminal e navegue até o diretório do projeto.
-4. Para instalar as dependências do projeto, execute o seguinte comando.
+4. Para instalar as dependências do projeto, execute o seguinte comando:
 ```
 pip install streamlit pandas requests beautifulsoup4
 ```
-6. Execute o comando streamlit run nome_do_arquivo para iniciar o servidor local e visualizar o dashboard em seu navegador.
+6. Para iniciar o servidor local e visualizar o dashboard em seu navegador, execute o seguinte comando:
 ```
 streamlit run .\dashboard.py
 ```
