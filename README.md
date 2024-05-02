@@ -1,6 +1,6 @@
 ![EA_Esports](Assets\EASportFIFA23.png)
 
-# Dashboard_EA
+# Dashboard FIFA 23
 
 Este projeto é um dashboard desenvolvido com o framework Django que permite verificar a classificação dos melhores jogadores do jogo FIFA 23 em seus respectivos continentes para conseguirem vagas que levam a disputar o campeonato que dá vaga ao mundial de um dos maiores jogos da atualidade.
 
