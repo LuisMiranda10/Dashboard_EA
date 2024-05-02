@@ -80,7 +80,7 @@ ocen = obterInformacoes(Oceania, dados_Oceania)
 df_oceania = pd.DataFrame(ocen)
 
 #Cria caixa de seleção de continente e logo
-st.sidebar.image('Assets\EA Sport FIFA 23.png', width=200, use_column_width=True)
+st.sidebar.image('Assets\EASportFIFA23.png', width=200, use_column_width=True)
 continente = st.sidebar.selectbox("Continente",dados_tab)
 
 col1, col2 = st.columns(2)
