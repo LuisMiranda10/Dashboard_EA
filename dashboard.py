@@ -86,22 +86,24 @@ continente = st.sidebar.selectbox("Continente",dados_tab)
 col1, col2 = st.columns(2)
 
 #Faz a verificação da Select-Box e cria a Barra de pesquisa + Botão de Procura
-def apresentarTabela(df, title_name):
+def apresentarTabela(df, title_name, numClassified):
     col1.title(f"{title_name} :earth_americas:" )
     barraPesquisa = col1.text_input('Search Name: ')
     col1.button("Search")
-    col1.checkbox('Classified')
+    classificados = col1.checkbox('Qualified')
     col1.write(df)
     
     if barraPesquisa:
         pesquisa = df[df['Name'].str.contains(barraPesquisa, case=False)] 
         if pesquisa.empty:   
-            col2.subheader('Player not Found', divider="gray")
+            col2.subheader("Player's not Found", divider="gray")
             col2.write(pesquisa, align="center")
         else:
-            col2.subheader('Player Found',divider="gray")
+            col2.subheader("Player's Found",divider="gray")
             col2.write(pesquisa, align="center")
-    #elif classificados:
+    if classificados:
+        col2.subheader("Qualified Player's", divider="gray")
+        col2.write(df[0:numClassified])
         
 
 if continente == "Overview":
@@ -114,31 +116,31 @@ if continente == "Overview":
     st.dataframe(placements)
     
 if continente == "Global":
-    apresentarTabela(df_global, '_South America Leaderboard_')
+    apresentarTabela(df_global, '_Global Leaderboard_', 1216)
 
 if continente == "Africa":
-    apresentarTabela(df_africa, '_Africa Leaderboard_')
+    apresentarTabela(df_africa, '_Africa Leaderboard_', 32)
 
 if continente == "Asia North":
-    apresentarTabela(df_asiaNorth, '_Asia North Leaderboard_')
+    apresentarTabela(df_asiaNorth, '_North Asia Leaderboard_', 64)
 
 if continente == "Asia South":
-    apresentarTabela(df_asiaSouth, '_Asia South Leaderboard_')
+    apresentarTabela(df_asiaSouth, '_South Asia Leaderboard_', 64)
 
 if continente == "Europe":
-    apresentarTabela(df_europe,  '_Europe Leaderboard_')
+    apresentarTabela(df_europe,  '_Europe Leaderboard_', 512)
 
 if continente == "LatAm North":
-    apresentarTabela(df_latAmNorth, '_Latam North Leaderboard_')
+    apresentarTabela(df_latAmNorth, '_Latam North Leaderboard_', 128)
 
 if continente == "LatAm South":  
-    apresentarTabela(df_latAmSouth, '_Latam South Leaderboard_')
+    apresentarTabela(df_latAmSouth, '_Latam South Leaderboard_', 128)
 
 if continente == "Middle East":
-    apresentarTabela(df_middleEast, '_Middle East Leaderboard_')
+    apresentarTabela(df_middleEast, '_Middle East Leaderboard_', 128)
     
 if continente == "North America":
-    apresentarTabela(df_northAmerica, '_North America Leaderboard_')
+    apresentarTabela(df_northAmerica, '_North America Leaderboard_', 128)
     
 if continente == "Oceania":
-    apresentarTabela(df_oceania, '_Oceania Leaderboard_')
+    apresentarTabela(df_oceania, '_Oceania Leaderboard_', 32)
