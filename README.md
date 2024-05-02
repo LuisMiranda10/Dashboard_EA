@@ -6,7 +6,7 @@
 
 Este projeto é um dashboard que permite verificar a classificação dos melhores jogadores do jogo FIFA 23 em seus respectivos continentes para conseguirem vagas que levam a disputar o campeonato que dá vaga ao mundial de um dos maiores jogos da atualidade.
 
-O objetivo deste aplicativo é fornecer uma interface fácil, intuitiva e visualmente mais elaborada para os usuários verificarem a classificação de cada continente e conseguirem procurar jogadores especifícos, permitindo que eles ajustem a tabela de acordo com suas necessidades.
+O objetivo deste dashboard é fornecer uma interface fácil, intuitiva e visualmente mais elaborada para os usuários verificarem a classificação de cada continente e conseguirem procurar jogadores especifícos, permitindo que eles ajustem a tabela de acordo com suas necessidades.
 
 ## Pré-requisitos
 
